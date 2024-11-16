@@ -1,0 +1,16 @@
+ {% extends 'base.html' %} {# importing every element from base.html #}
+
+{% set title = 'History' %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'history_style.css')}}">
+{%endblock %}
+{% block content %}
+<div class="cont">
+    <ul class="list-group">
+    {% for action in actions %}
+        <li class="list-group-item active">{{action.record}}</li>
+    {% endfor%}
+    </ul>
+
+</div>
+{% endblock %}

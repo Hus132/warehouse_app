@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% set title ='Products' %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{{url_for('static' , filename = 'form_styling.css')}}">
+{%endblock %}
+{% block content %}
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+
+      <th scope="col">Name</th>
+      <th scope="col">Price</th>
+      <th scope="col">Count</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for products in available_products %}
+    <tr >
+      <td>{{products.name}}</td>
+      <td>{{products.price}}</td>
+        <td>{{products.count}}</td>
+    </tr>
+  {% endfor %}
+  </tbody>
+</table>
+{%endblock %}
